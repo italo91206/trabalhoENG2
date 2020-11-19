@@ -15,7 +15,7 @@
         <section class="content">
             <div class="container-fluid">
                 <main>
-                    <form>
+                    <form onchange="index.validaForm()">
                         <div class="form-group">
                             <label for="">Nome do torneio</label>
                             <input type="text" id="input-torneio-nome" placeholder="Torneio de Verão amador 2020 MTG" class="form-control">

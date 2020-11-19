@@ -1,7 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use app\Http\Controllers\TorneiosController;
+use App\Http\Controllers\TorneiosController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\JogadoresController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,13 +23,20 @@ Route::view('/adm/config/acesso','adm.config.acesso.index')->middleware('auth');
 Route::view('/adm/torneios', 'adm.config.torneio.index')->middleware('auth');
 Route::view('/adm/torneios/criar', 'adm.config.torneio.criar')->middleware('auth');
 
+// ROTA DOS JOGADORES 
+
+Route::view('/adm/config/user/index', 'adm.config.acesso.index')->middleware('auth');
+Route::get('/adm/config/user/carregarJogadores', [JogadoresController::class, 'carregarJogadores']);
+
+// FIM ROTA DOS JOGADORES
+
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
 });
 
-Route::get('/adm/torneios/criar/recuperarFormatos@carregarTorneios');
+Route::get('/adm/torneios/criar/recuperarFormatos', [TorneiosController::class, 'carregarTorneios'] );
 
 Auth::routes();
 $user = Auth::user();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', [HomeController::class, 'index']);

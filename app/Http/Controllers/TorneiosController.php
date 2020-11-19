@@ -1,7 +1,7 @@
 <?php
 
-namespace App\Http\Controllers;
-
+namespace app\Http\Controllers;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
 class TorneiosController extends Controller
@@ -26,9 +26,9 @@ class TorneiosController extends Controller
     }
 
     public function carregarTorneios(){
-        // $formatos = DB::table('formatojogo')->get();
+        $formatos = DB::table('formatojogo')->get();
 
         return response($formatos, 200)
-            ->header('Content-Type', 'application/json')
+            ->header('Content-Type', 'application/json');
     }
 }
