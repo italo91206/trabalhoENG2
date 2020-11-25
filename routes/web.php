@@ -16,17 +16,20 @@ use App\Http\Controllers\JogadoresController;
 |
 */
 
-//rotas do adm
+// ROTAS DO ADM
 Route::view('/adm','adm.index')->middleware('auth');
 Route::view('/adm/config/acesso','adm.config.acesso.index')->middleware('auth');
 
 Route::view('/adm/torneios', 'adm.config.torneio.index')->middleware('auth');
 Route::view('/adm/torneios/criar', 'adm.config.torneio.criar')->middleware('auth');
 
-// ROTA DOS JOGADORES 
+// ADM - ROTA DOS JOGADORES 
 
 Route::view('/adm/config/user/index', 'adm.config.acesso.index')->middleware('auth');
 Route::get('/adm/config/user/carregarJogadores', [JogadoresController::class, 'carregarJogadores']);
+
+Route::view('/adm/config/user/edit', 'adm.config.acesso.edit')->middleware('auth');
+Route::get('/adm/config/user/edit/{id}', [JogadoresController::class, 'carregarJogador']);
 
 // FIM ROTA DOS JOGADORES
 

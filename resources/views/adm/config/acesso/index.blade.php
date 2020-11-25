@@ -2,7 +2,7 @@
 
 @section('main')
     <!-- Content Wrapper. Contains page content -->
-    <div class="content-wrapper">
+    <div class="content-wrapper" onload="index.carregarTodosJogadores()">
         <!-- Content Header (Page header) -->
         <div class="content-header">
             <div class="container-fluid">
@@ -18,13 +18,31 @@
             <div class="container-fluid">
                 <main>
                     <div class="row">
+                        
+                        <!-- jogadores -->
                         <div class="col-lg-3 col-6">
                           
                           <div class="small-box bg-success">
                             <div class="inner">
                               <h3 id="user-count" class="hidden">hold</h3>
               
-                              <p>Usuários cadastrados no total</p>
+                              <p>Jogadores cadastrados no total</p>
+                            </div>
+                            <div class="icon">
+                                <i class="fas fa-user-friends"></i>
+                            </div>
+                            <a href="#" class="small-box-footer">Cadastrar Novo <i class="fas fa-arrow-circle-right"></i></a>
+                          </div>
+                        </div>
+
+                        <!-- funcionários -->
+                        <div class="col-lg-3 col-6">
+                          
+                          <div class="small-box bg-success">
+                            <div class="inner">
+                              <h3 id="user-count" class="hidden">hold</h3>
+              
+                              <p>Funcionários cadastrados no total</p>
                             </div>
                             <div class="icon">
                                 <i class="fas fa-user-friends"></i>
@@ -34,6 +52,8 @@
                         </div>
                         
                     </div>
+
+                    
                 </main>
             </div>
         </section>
@@ -42,7 +62,7 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="m-0 text-dark">Visualização geral</h1>
+                        <h1 class="m-0 text-dark">Jogadores - Visualização geral</h1>
                     </div>
                 </div>
             </div>
@@ -129,5 +149,11 @@
             visibility: hidden;
         }
     </style>
+
     <script src="/js/jogadores-control.js">
-@stop
+    <script>
+        window.onload = function (){
+            alert('done');
+        }
+    </script>
+@endsection

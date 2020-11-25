@@ -35,4 +35,14 @@ class JogadoresController extends Controller
         return response($jogadores, 200)
             ->header('Content-Type', 'application/json');
     }
+
+    public function carregarJogador($id){
+        $jogador = DB::table('users')
+            ->select()
+            ->where('id', $id)
+            ->get();
+
+        return response($jogador, 200)
+            ->header('Content-Type', 'application/json');
+    }
 }
