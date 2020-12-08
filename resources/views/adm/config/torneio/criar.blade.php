@@ -60,6 +60,11 @@
                 </main>
             </div>
         </section>
+
+        <div id="loading" class="hide">
+            <div class="spinner-border"></div>
+        </div>
+
     </div>
     
     <style>

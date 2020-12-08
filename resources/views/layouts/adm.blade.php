@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="{{ asset('adminlte3/plugins/overlayScrollbars/css/OverlayScrollbars.min.css') }}">
     <link rel="stylesheet" href="{{ asset('adminlte3/plugins/daterangepicker/daterangepicker.css') }}">
     <link rel="stylesheet" href="{{ asset('adminlte3/plugins/summernote/summernote-bs4.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
 
@@ -216,7 +217,8 @@
         </aside>
 
         @yield('main')
-        
+
+
         <footer class="main-footer">
             <strong>Trabalho de Engenharia 2
             <div class="float-right d-none d-sm-inline-block">

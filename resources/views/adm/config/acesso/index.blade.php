@@ -2,7 +2,7 @@
 
 @section('main')
     <!-- Content Wrapper. Contains page content -->
-    <div class="content-wrapper" onload="index.carregarTodosJogadores()">
+    <div class="content-wrapper">
         <!-- Content Header (Page header) -->
         <div class="content-header">
             <div class="container-fluid">
@@ -83,77 +83,9 @@
         
     </div>
 
-    <style>
-        #usuariosView .id {
-            width: 45px;
-        }
-
-        #usuariosView .nome {
-            width: 200px;
-        }
-
-        #usuariosView .email {
-            width: 220px;
-        }
-
-        #usuariosView .partidas {
-            width: 100px;
-            text-align: center;
-        }
-
-        #usuariosView .winrate {
-            width: 100px;
-            text-align: center;
-        }
-
-        #usuariosView .opcoes {
-            width: 160px;
-            text-align: center;
-        }
-
-        button.disabled {
-            opacity: 0.5;
-            pointer-events: none;
-        }
-
-        th {
-            border-bottom: solid 2px #868686;
-            padding-bottom: 10px;
-        }
-
-        button.disabled {
-            opacity: 0.5;
-            pointer-events: none;
-        }
-
-        button {
-            border: none;
-            background: #343a40;
-            border-radius: 5px;
-            width: 25px;
-            height: 25px;
-            color: #fff;
-            margin-right: 5px;
-            font-size: 10px;
-        }
-
-        #usuariosView tbody:last-child tr {
-            border-bottom: solid 1px #343a40;
-        }
-
-        tr:hover {
-            background: #e6e6e6;
-        }
-
-        .hidden{
-            visibility: hidden;
-        }
-    </style>
+    <div id="loading">
+        <div class="spinner-border"></div>
+    </div>
 
     <script src="/js/jogadores-control.js">
-    <script>
-        window.onload = function (){
-            alert('done');
-        }
-    </script>
 @endsection

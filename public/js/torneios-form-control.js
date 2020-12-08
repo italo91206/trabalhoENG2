@@ -1,5 +1,6 @@
 let index = { 
     carregarFormatos: function(){
+        document.getElementById('loading').classList.toggle('hide');
         let config = {
             method: "GET",
             headers: {
@@ -13,6 +14,15 @@ let index = {
             })
             .then(function(resposta){
                 console.log(resposta);
+                var node;
+                
+                for(var i=0; i < resposta.length; i++){
+                    node = document.createElement("option");
+                    node.value = resposta[i].id;
+                    node.innerText = resposta[i].nome;
+                    document.getElementById('select-formatos-de-jogo').appendChild(node);
+                    document.getElementById('loading').classList.toggle('hide');
+                }
             })
     },
     cadastrarTorneio: function(){

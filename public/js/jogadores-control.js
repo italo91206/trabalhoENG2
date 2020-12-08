@@ -43,10 +43,11 @@ let index = {
                 tabela.innerHTML = tabelaHeader + item;
                 document.getElementById('user-count').innerText = i;
                 document.getElementById('user-count').classList.remove("hidden");
+                document.getElementById('loading').classList.toggle("hide");
             })
     },
     editarJogador: function(id){
-        window.location.href = `/adm/confi/user/edit/${id}`
+        window.location.href = `/adm/config/user/edit/${id}`
     },
     carregarJogador: function(){
         var url = window.location.href.split('/');
@@ -70,3 +71,4 @@ let index = {
     }
 };
 
+index.carregarTodosJogadores();

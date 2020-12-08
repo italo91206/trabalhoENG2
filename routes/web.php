@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TorneiosController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\JogadoresController;
+use App\Http\Controllers\JogadorController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,8 +29,8 @@ Route::view('/adm/torneios/criar', 'adm.config.torneio.criar')->middleware('auth
 Route::view('/adm/config/user/index', 'adm.config.acesso.index')->middleware('auth');
 Route::get('/adm/config/user/carregarJogadores', [JogadoresController::class, 'carregarJogadores']);
 
-Route::view('/adm/config/user/edit', 'adm.config.acesso.edit')->middleware('auth');
-Route::get('/adm/config/user/edit/{id}', [JogadoresController::class, 'carregarJogador']);
+Route::view('/adm/config/user/edit/{id}', 'adm.config.acesso.edit')->middleware('auth');
+Route::post('/adm/config/user/edit/carregarJogador/{id}', [JogadorController::class, 'carregarJogador']);
 
 // FIM ROTA DOS JOGADORES
 
