@@ -5,6 +5,7 @@ use App\Http\Controllers\TorneiosController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\JogadoresController;
 use App\Http\Controllers\JogadorController;
+use App\Http\Controllers\FormatosController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,9 +31,19 @@ Route::view('/adm/config/user/index', 'adm.config.acesso.index')->middleware('au
 Route::get('/adm/config/user/carregarJogadores', [JogadoresController::class, 'carregarJogadores']);
 
 Route::view('/adm/config/user/edit/{id}', 'adm.config.acesso.edit')->middleware('auth');
+Route::get('/carregarFuncoes', [JogadorController::class, 'carregarFuncoes']);
 Route::post('/adm/config/user/edit/carregarJogador/{id}', [JogadorController::class, 'carregarJogador']);
+Route::post('/usuarios/editar/salvar', [JogadorController::class, 'editarJogador']);
 
 // FIM ROTA DOS JOGADORES
+
+// ADM - ROTA DOS FORMATOS
+
+Route::view('/adm/formatos', 'adm.config.formato.index')->middleware('auth');
+Route::get('/adm/formatos/carregar', [FormatosController::class, 'carregarFormatos']);
+
+
+// FIM ROTA DOS FORMATOS
 
 Route::get('/', function () {
     return view('auth.login');

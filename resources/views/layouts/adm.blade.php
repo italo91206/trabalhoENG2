@@ -156,7 +156,7 @@
                         </li>
 
                         <li class="nav-item has-treeview">
-                            <a href="/adm/torneios" class="nav-link">
+                            <a href="/adm/config/user/index" class="nav-link">
                                 <i class="nav-icon fas fa-user"></i>
                                 <p>
                                     Jogadores
@@ -190,7 +190,7 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link">
+                                    <a href="/adm/formatos" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Gerenciar Formatos</p>
                                     </a>

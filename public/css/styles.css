@@ -90,3 +90,30 @@ tr:hover {
 .hidden{
     visibility: hidden;
 }
+
+.inner{
+    height: 112px;
+}
+
+.form-erro {
+    color: red;
+}
+
+#save_edit {
+    width: 200px;
+    height: 40px;
+    padding: 0px;
+}
+
+#delete_user{
+    width: 200px;
+    height: 40px;
+    padding: 0px;
+    margin-top: 0px;
+    margin-left: 20px;
+}
+
+.flex{
+    display: flex;
+    flex-wrap: wrap;
+}

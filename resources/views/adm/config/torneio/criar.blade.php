@@ -66,12 +66,6 @@
         </div>
 
     </div>
-    
-    <style>
-        .form-erro {
-            color: red;
-        }
-    </style>
 
     <script src="/js/torneios-form-control.js">
 @stop

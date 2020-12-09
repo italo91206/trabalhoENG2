@@ -33,11 +33,29 @@ class JogadorController extends Controller
      */
     public function carregarJogador($id){
         $jogador = DB::table('users')
-        ->select()
-        ->where('id', $id)
-        ->get();        
-        // return view('adm.config.acesso.edit', compact('jogador'));
+            ->select()
+            ->where('id', $id)
+            ->get();        
+
         return response($jogador, 200)
+            ->header('Content-Type', 'application/json');
+    }
+
+    public function carregarFuncoes(){
+        $funcoes = DB::table('funcoes')
+            ->select()
+            ->get();
+
+        return response($funcoes, 200)
+            ->header('Content-Type', 'application/json');
+    }
+
+    public function editarJogador(Request $request){
+        $dados = $request->all();
+        $arquivo = fopen("C:\\Users\\italo\\Desktop\\arquivo.txt", "w");
+        fwrite($arquivo, var_dump($request->all()));
+
+        return response($request->all(), 200)
             ->header('Content-Type', 'application/json');
     }
 }

@@ -58,10 +58,4 @@
             </div>
         </section>
     </div>
-
-    <style>
-        .inner{
-            height: 112px;
-        }
-    </style>
 @stop
