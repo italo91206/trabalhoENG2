@@ -16,6 +16,7 @@ class Torneio extends Model
         'dt_inicio',
         'qtd_jogadores',
         'premiacao',
+        'is_encerrado'
     ];
 
     protected $guarded = [
