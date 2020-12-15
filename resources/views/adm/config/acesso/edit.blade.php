@@ -1,68 +1,62 @@
 @extends('layouts.adm')
 
 @section('main')
+    <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
         <div class="content-header">
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="m-0 text-dark">Editar usuário: </h1>
-                    </div>
-                </div>
-            </div>
+                        <h1 class="m-0 text-dark">Editar Usuário</h1>
+                    </div><!-- /.col -->
+                </div><!-- /.row -->
+            </div><!-- /.container-fluid -->
         </div>
-        
+        <!-- /.content-header -->
+
+        <!-- Main content -->
         <section class="content">
             <div class="container-fluid">
-                <main>
-                    <form onchange="index.validaForm()">
-                        <?php echo csrf_field() ?>
-
-                        <div class="form-group">
-                            <label for="">ID de usuário</label>
-                            <input type="text" id="user_id"  class="form-control" disabled>
+                <!-- Small boxes (Stat box) -->
+                <div class="row">
+                    <div class="card card-secondary col-sm">
+                        <div class="card-header">
+                            <h3 class="card-title">Editar</h3>
                         </div>
+                        <!-- /.card-header -->
+                        <!-- form start -->
+                        <form role="form" method="POST" action="{{ route('user.update', $user->id)}}">
+                            @csrf
+                            <input type="hidden" name="_method" value="PUT">
+                            <div class="card-body">
+                                <div class="form-group">
+                                    <label for="nome">Nome</label>
+                                    <input type="text" class="form-control" id="nome" name="nome" value="{{$user->name}}"
+                                        placeholder="Enter name">
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email</label>
+                                    <input type="email" class="form-control" id="email" name="email" value="{{$user->email}}"
+                                        placeholder="Enter email">
+                                </div>
+                                <div class="form-group">
+                                    <label for="senha">Nova Senha</label>
+                                    <input type="password" class="form-control" id="senha" name="senha"
+                                        placeholder="Password">
+                                </div>
+                            </div>
+                            <!-- /.card-body -->
 
-                        <div class="form-group">
-                            <label for="">Nome de usuário</label>
-                            <input type="text" id="user_name"  class="form-control" disabled>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="">E-mail</label>
-                            <input type="text" id="user_email" class="form-control" disabled>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="">Habilitado</label>
-                            <select name="" id="is_active" class="form-control" disabled>
-                                <option name="placeholder_only" value="" selected></option>
-                                <option value="1">Sim</option>
-                                <option value="2">Não</option>
-                            </select>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="">Função</label>
-                            <select id="user_job" value="" class="form-control" disabled>
-                                <option name="placeholder_only" id="0" selected></option>
-                            </select>
-                            <!-- <input type="text" id="user_job" class="form-control"> -->
-                        </div>
-
-                        <div class="form-group flex">
-                            <input type="button" onclick="index.mandarAlteracoes()" id="save_edit" value="Salvar alterações" class="btn btn-block btn-success" disabled>
-                            <input type="button" onclick="index.excluirUsuario()" id="delete_user" value="Excluir usuário" class="btn btn-block btn-danger" disabled>
-                        </div>
-                    </form>
-                </main>
+                            <div class="card-footer">
+                                <button type="submit" class="btn btn-secondary">Salvar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!-- /.row -->
             </div>
         </section>
-        
-        <div id="loading">
-            <div class="spinner-border"></div>
-        </div>
+        <!-- /.content -->
     </div>
-
-    <script src="/js/jogador-control.js">
-@stop
+@endsection
